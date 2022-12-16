@@ -9,6 +9,8 @@ using Sdl.Tridion.Api.Http.Client.Auth;
 using Sdl.Tridion.Api.Http.Client.Request;
 using Sdl.Tridion.Api.Http.Client.Response;
 
+using HttpClient = Sdl.Tridion.Api.Http.Client.HttpClient;
+
 namespace Sdl.Tridion.Api.IqQuery.RestClient
 {
     public class RestQueryClient<T,R> : IQueryClient<T,R> where T : IQueryResultData<R> where R : IQueryResult

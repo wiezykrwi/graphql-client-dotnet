@@ -13,6 +13,8 @@ using Sdl.Tridion.Api.GraphQL.Client.Schema;
 using Sdl.Tridion.Api.Client;
 using Sdl.Tridion.Api.Client.Core;
 
+using HttpClient = Sdl.Tridion.Api.Http.Client.HttpClient;
+
 namespace Sdl.Tridion.Api.GraphQL.Client
 {
     /// <summary>
