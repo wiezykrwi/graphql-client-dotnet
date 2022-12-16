@@ -1,13 +1,12 @@
-﻿namespace Sdl.Tridion.Api.IqQuery
+﻿namespace Sdl.Tridion.Api.IqQuery;
+
+/// <summary>
+/// Search Criteria. Sent to the search index.
+/// </summary>
+public interface ICriteria
 {
     /// <summary>
-    /// Search Criteria. Sent to the search index.
+    /// Gets the raw query.
     /// </summary>
-    public interface ICriteria
-    {
-        /// <summary>
-        /// Gets the raw query.
-        /// </summary>
-        string RawQuery { get; }
-    }
+    string RawQuery { get; }
 }

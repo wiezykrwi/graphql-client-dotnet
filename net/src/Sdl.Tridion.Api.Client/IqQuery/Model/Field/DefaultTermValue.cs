@@ -1,67 +1,66 @@
-﻿namespace Sdl.Tridion.Api.IqQuery.Model.Field
+﻿namespace Sdl.Tridion.Api.IqQuery.Model.Field;
+
+/// <summary>
+/// Default implementation for TermValue
+/// </summary>
+public class DefaultTermValue : ITermValue
 {
-    /// <summary>
-    /// Default implementation for TermValue
-    /// </summary>
-    public class DefaultTermValue : ITermValue
+    public static readonly double NoBoost = 0;
+
+    public object Value { get; set; }
+
+    public TermTypes TermType { get; set; }       
+
+    public double BoostValue { get; set; } = NoBoost;
+
+    public DefaultTermValue()
     {
-        public static readonly double NoBoost = 0;
+        TermType = TermTypes.Exact;
+    }
 
-        public object Value { get; set; }
+    public DefaultTermValue(object value)
+    {
+        Value = value;
+        TermType = TermTypes.Exact;
+    }
 
-        public TermTypes TermType { get; set; }       
+    public DefaultTermValue(object value, TermTypes type)
+    {
+        Value = value;
+        TermType = type;
+    }
 
-        public double BoostValue { get; set; } = NoBoost;
+    public DefaultTermValue(object value, double boostValue, TermTypes type)
+    {
+        Value = value;
+        BoostValue = boostValue;
+        TermType = type;
+    }
 
-        public DefaultTermValue()
-        {
-            TermType = TermTypes.Exact;
-        }
+    public ITermValue Fuzzy(object value)
+    {
+        Value = value;
+        TermType = TermTypes.Fuzzy;
+        return this;
+    }
 
-        public DefaultTermValue(object value)
-        {
-            Value = value;
-            TermType = TermTypes.Exact;
-        }
+    public ITermValue Exact(object value)
+    {
+        Value = value;
+        TermType = TermTypes.Exact;
+        return this;
+    }
 
-        public DefaultTermValue(object value, TermTypes type)
-        {
-            Value = value;
-            TermType = type;
-        }
+    public ITermValue WildCard(object value)
+    {
+        Value = value;
+        TermType = TermTypes.Wildcard;
+        return this;
+    }
 
-        public DefaultTermValue(object value, double boostValue, TermTypes type)
-        {
-            Value = value;
-            BoostValue = boostValue;
-            TermType = type;
-        }
-
-        public ITermValue Fuzzy(object value)
-        {
-            Value = value;
-            TermType = TermTypes.Fuzzy;
-            return this;
-        }
-
-        public ITermValue Exact(object value)
-        {
-            Value = value;
-            TermType = TermTypes.Exact;
-            return this;
-        }
-
-        public ITermValue WildCard(object value)
-        {
-            Value = value;
-            TermType = TermTypes.Wildcard;
-            return this;
-        }
-
-        public ITermValue Boost(double boostValue)
-        {
-            BoostValue = boostValue;
-            return this;
-        }
+    public ITermValue Boost(double boostValue)
+    {
+        BoostValue = boostValue;
+        return this;
     }
 }

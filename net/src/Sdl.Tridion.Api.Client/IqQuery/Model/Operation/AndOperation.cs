@@ -1,12 +1,11 @@
-﻿namespace Sdl.Tridion.Api.IqQuery.Model.Operation
+﻿namespace Sdl.Tridion.Api.IqQuery.Model.Operation;
+
+/// <summary>
+/// And Operation
+/// </summary>
+public class AndOperation : BaseOperation
 {
-    /// <summary>
-    /// And Operation
-    /// </summary>
-    public class AndOperation : BaseOperation
+    public AndOperation(IQuery query) : base(query, BooleanOperationType.And)
     {
-        public AndOperation(IQuery query) : base(query, BooleanOperationType.And)
-        {
-        }
     }
 }

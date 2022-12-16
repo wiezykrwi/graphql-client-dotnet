@@ -1,16 +1,13 @@
-﻿using System;
+﻿namespace Sdl.Tridion.Api.IqQuery.RestClient;
 
-namespace Sdl.Tridion.Api.IqQuery.RestClient
+/// <summary>
+/// IRestQueryClientConfigurationProvider
+/// </summary>
+public interface IRestQueryClientConfigurationProvider
 {
-    /// <summary>
-    /// IRestQueryClientConfigurationProvider
-    /// </summary>
-    public interface IRestQueryClientConfigurationProvider
-    {
-        Uri Endpoint { get; }
+    Uri Endpoint { get; }
 
-        int Timeout { get; }
+    int Timeout { get; }
 
-        string DefaultIndexName { get; }
-    }
+    string DefaultIndexName { get; }
 }

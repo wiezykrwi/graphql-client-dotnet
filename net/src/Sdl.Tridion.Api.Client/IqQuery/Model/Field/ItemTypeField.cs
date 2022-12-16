@@ -1,14 +1,13 @@
-﻿namespace Sdl.Tridion.Api.IqQuery.Model.Field
+﻿namespace Sdl.Tridion.Api.IqQuery.Model.Field;
+
+/// <summary>
+/// ItemType Field
+/// </summary>
+public class ItemTypeField : BaseField
 {
-    /// <summary>
-    /// ItemType Field
-    /// </summary>
-    public class ItemTypeField : BaseField
+    public string ItemType { get; set; }
+    public ItemTypeField(bool negate, string itemType) : base(negate)
     {
-        public string ItemType { get; set; }
-        public ItemTypeField(bool negate, string itemType) : base(negate)
-        {
-            ItemType = itemType;
-        }
+        ItemType = itemType;
     }
 }

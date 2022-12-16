@@ -1,15 +1,12 @@
-﻿using System.Collections.Generic;
+﻿namespace Sdl.Tridion.Api.Client.ContentModel;
 
-namespace Sdl.Tridion.Api.Client.ContentModel
+/// <summary>
+/// Context Data
+/// </summary>
+public interface IContextData
 {
     /// <summary>
-    /// Context Data
+    /// List of claim values to pass to query.
     /// </summary>
-    public interface IContextData
-    {
-        /// <summary>
-        /// List of claim values to pass to query.
-        /// </summary>
-        List<ClaimValue> ClaimValues { get; set; }
-    }
+    List<ClaimValue> ClaimValues { get; set; }
 }

@@ -1,12 +1,11 @@
-﻿namespace Sdl.Tridion.Api.IqQuery.Model.Operation
+﻿namespace Sdl.Tridion.Api.IqQuery.Model.Operation;
+
+/// <summary>
+/// Or Operation
+/// </summary>
+public class OrOperation : BaseOperation
 {
-    /// <summary>
-    /// Or Operation
-    /// </summary>
-    public class OrOperation : BaseOperation
+    public OrOperation(IQuery query) : base(query, BooleanOperationType.Or)
     {
-        public OrOperation(IQuery query) : base(query, BooleanOperationType.Or)
-        {
-        }
     }
 }

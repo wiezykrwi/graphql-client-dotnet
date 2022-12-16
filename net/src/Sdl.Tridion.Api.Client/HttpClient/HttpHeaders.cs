@@ -1,31 +1,29 @@
-﻿using System.Collections.Generic;
-using System.Net;
+﻿using System.Net;
 
-namespace Sdl.Tridion.Api.Http.Client
+namespace Sdl.Tridion.Api.Http.Client;
+
+/// <summary>
+/// Http Headers
+/// </summary>
+public class HttpHeaders : Dictionary<string, object>
 {
-    /// <summary>
-    /// Http Headers
-    /// </summary>
-    public class HttpHeaders : Dictionary<string, object>
+    public HttpHeaders()
     {
-        public HttpHeaders()
-        {
-        }
+    }
 
-        public HttpHeaders(HttpHeaders headers)
+    public HttpHeaders(HttpHeaders headers)
+    {
+        foreach (var x in headers)
         {
-            foreach (var x in headers)
-            {
-                Add(x.Key, x.Value);
-            }
+            Add(x.Key, x.Value);
         }
+    }
 
-        public HttpHeaders(WebHeaderCollection headers)
+    public HttpHeaders(WebHeaderCollection headers)
+    {
+        foreach (var x in headers.AllKeys)
         {
-            foreach (var x in headers.AllKeys)
-            {
-                Add(x, headers[x]);
-            }
+            Add(x, headers[x]);
         }
     }
 }

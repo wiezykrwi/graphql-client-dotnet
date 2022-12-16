@@ -1,6 +1,5 @@
-﻿namespace Sdl.Tridion.Api.IqQuery
+﻿namespace Sdl.Tridion.Api.IqQuery;
+
+public interface IQueryProvider
 {
-    public interface IQueryProvider
-    {
-    }
 }

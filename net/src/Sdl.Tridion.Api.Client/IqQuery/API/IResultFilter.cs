@@ -1,7 +1,6 @@
-﻿namespace Sdl.Tridion.Api.IqQuery
+﻿namespace Sdl.Tridion.Api.IqQuery;
+
+public interface IResultFilter : IQueryFilter
 {
-    public interface IResultFilter : IQueryFilter
-    {
       
-    }
 }
